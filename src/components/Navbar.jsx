@@ -1,23 +1,39 @@
-import React, { Component } from 'react'
-import Link from 'react-router-dom/Link';
+import React from "react";
 
-//material ui stuff
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Button from '@material-ui/core/Button'
+function Navbar() {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a className="navbar-brand" href="/">
+        Hog Snatcher
+      </a>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
 
-class Navbar extends Component {
-    render() {
-        return (
-            <AppBar>
-                <Toolbar className="nav-container">
-                    <Button color="inherit" component={Link} to="/login">Login</Button>
-                    <Button color="inherit" component={Link} to="/">Home</Button>
-                    <Button color="inherit" component={Link} to="/signup">Signup</Button>
-                </Toolbar>
-            </AppBar>
-        )
-    }
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <a className="nav-link" href="/">
+              Home <span className="sr-only">(current)</span>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/catch">
+              Catch
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;
