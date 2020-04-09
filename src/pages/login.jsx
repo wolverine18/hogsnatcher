@@ -15,7 +15,7 @@ function Login () {
         event.preventDefault();
         API.login(getLogin).then((data) => {
             setError('');
-            history.push('/');
+            history.push('/home');
         }).catch((err) => {
             setError(err.message);
         });
