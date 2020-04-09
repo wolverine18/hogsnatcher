@@ -28,19 +28,21 @@ export default function Catch () {
                     <input type="date" id="date" className="form-control datepicker" value={getCatch.date || ''} onChange={(event) => updateCatch('date', event.target.value)}></input>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="waterTemp">Water Temp:</label>
-                    <input type="number" id="waterTemp" className="form-control" value={getCatch.waterTemp || ''} onChange={(event) => updateCatch('waterTemp', event.target.value)}></input>
+                    <label htmlFor="waterTemp">Water Tempurature:</label>
+                    <input type="number" id="waterTemp" placeholder="Water Temperature" className="form-control" value={getCatch.waterTemp || ''} onChange={(event) => updateCatch('waterTemp', event.target.value)}></input>
                 </div>
                 <div className="form-group">
                     <label htmlFor="waterClarity">Water Clarity:</label>
-                    <select id="htmlFor" className="form-control" value={getCatch.waterClarity || ''} onChange={(event) => updateCatch('waterClarity', event.target.value)}>
+                    <select id="htmlFor" className="form-control" defaultValue="DEFAULT" value={getCatch.waterClarity} onChange={(event) => updateCatch('waterClarity', event.target.value)}>
+                        <option hidden disabled value="DEFAULT"> -- select an option -- </option>
                         <option>Clear</option>
                         <option>Muddy</option>
                     </select>
                 </div>
                 <div className="form-group">
                     <label htmlFor="windSpeed">Wind Speed:</label>
-                    <select id="Wind Speed" className="form-control" value={getCatch.windSpeed || ''} onChange={(event) => updateCatch('windSpeed', event.target.value)}>
+                    <select id="Wind Speed" className="form-control" defaultValue="DEFAULT" value={getCatch.windSpeed} onChange={(event) => updateCatch('windSpeed', event.target.value)}>
+                        <option hidden disabled value="DEFAULT"> -- select an option -- </option>
                         <option>0-5</option>
                         <option>5-10</option>
                         <option>10-15</option>
@@ -50,7 +52,8 @@ export default function Catch () {
                 </div>
                 <div className="form-group">
                     <label htmlFor="lure">Lure:</label>
-                    <select id="lure" className="form-control" value={getCatch.lure || ''} onChange={(event) => updateCatch('lure', event.target.value)}>
+                    <select id="lure" className="form-control" defaultValue="DEFAULT" value={getCatch.lure} onChange={(event) => updateCatch('lure', event.target.value)}>
+                        <option hidden disabled value="DEFAULT"> -- select an option -- </option>
                         <option>Jig</option>
                         <option>Jerkbait</option>
                         <option>Crankbait</option>
@@ -59,23 +62,24 @@ export default function Catch () {
                 </div>
                 <div className="form-group">
                     <label htmlFor="waypoint">Waypoint:</label>
-                    <input type="text" id="waypoint" className="form-control" value={getCatch.waypoint || ''} onChange={(event) => updateCatch('waypoint', event.target.value)}></input>
+                    <input type="text" id="waypoint" placeholder="Waypoint" className="form-control" value={getCatch.waypoint || ''} onChange={(event) => updateCatch('waypoint', event.target.value)}></input>
                 </div>
                 <div className="form-group">
                     <label htmlFor="comments">Comments:</label>
-                    <textarea id="comments" rows="5" className="form-control" value={getCatch.comments || ''} onChange={(event) => updateCatch('comments', event.target.value)}></textarea>
+                    <textarea id="comments" placeholder="Comments" rows="5" className="form-control" value={getCatch.comments || ''} onChange={(event) => updateCatch('comments', event.target.value)}></textarea>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="airTemp">Air Temp:</label>
-                    <input type="number" id="airTemp" className="form-control" value={getCatch.airTemp || ''} onChange={(event) => updateCatch('airTemp', event.target.value)}></input>
+                    <label htmlFor="airTemp">Air Tempurature:</label>
+                    <input type="number" id="airTemp" placeholder="Air Temperature" className="form-control" value={getCatch.airTemp || ''} onChange={(event) => updateCatch('airTemp', event.target.value)}></input>
                 </div>
                 <div className="form-group">
                     <label htmlFor="quantity">Number of Fish:</label>
-                    <input type="number" id="quantity" className="form-control" value={getCatch.quantity || ''} onChange={(event) => updateCatch('quantity', event.target.value)}></input>
+                    <input type="number" id="quantity" placeholder="Number of Fish" className="form-control" value={getCatch.quantity || ''} onChange={(event) => updateCatch('quantity', event.target.value)}></input>
                 </div>
                 <div className="form-group">
                     <label htmlFor="size">Size of Fish:</label>
-                    <select id="size" className="form-control" value={getCatch.size || ''} onChange={(event) => updateCatch('size', event.target.value)}>
+                    <select id="size" className="form-control" defaultValue="DEFAULT" value={getCatch.size} onChange={(event) => updateCatch('size', event.target.value)}>
+                        <option hidden disabled value="DEFAULT"> -- select an option -- </option>
                         <option>0-2 lbs.</option>
                         <option>2-3 lbs.</option>
                         <option>4+ lbs.</option>
@@ -83,11 +87,11 @@ export default function Catch () {
                 </div>
                 <div className="form-group">
                     <label htmlFor="depth">Depth:</label>
-                    <input type="number" id="depth" className="form-control" value={getCatch.depth || ''} onChange={(event) => updateCatch('depth', event.target.value)}></input>
+                    <input type="number" id="depth" placeholder="Depth" className="form-control" value={getCatch.depth || ''} onChange={(event) => updateCatch('depth', event.target.value)}></input>
                 </div>
                 <div className="form-group">
                     <button type="submit" className="btn btn-primary">Submit</button>
-                    <button type="submit" className="btn btn-primary" onClick={cancelClicked}>Cancel</button>
+                    <button type="submit" className="btn btn-danger" onClick={cancelClicked}>Cancel</button>
                 </div>
             </form>
         </div>
