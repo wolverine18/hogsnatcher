@@ -1,8 +1,9 @@
 import React from 'react'
 import API from '../API'
+import { useHistory } from 'react-router-dom'
 
 function Login () {
-
+    const history = useHistory();
     const [getLogin, setLogin] = React.useState({
         email: '',
         password: ''
@@ -14,7 +15,7 @@ function Login () {
         event.preventDefault();
         API.login(getLogin).then((data) => {
             setError('');
-            window.location.href = '/';
+            history.push('/');
         }).catch((err) => {
             setError(err.message);
         });
