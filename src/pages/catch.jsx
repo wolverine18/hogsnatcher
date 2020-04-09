@@ -1,7 +1,7 @@
 import React from 'react'
 import API from '../API'
 
-export default function Catch () {
+function Catch () {
     const [getCatch, setCatch] = React.useState([]);
 
     const updateCatch = (field, value) => {
@@ -97,3 +97,5 @@ export default function Catch () {
         </div>
     )
 }
+
+export default Catch
