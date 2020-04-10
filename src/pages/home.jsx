@@ -1,20 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
 import axios from 'axios';
 
-export class home extends Component {
-    componentDidMount() {
+function Home() {
+    const getCatches = () => {
+        console.log('In get catches');
         axios.get('/catches')
         .then((res) => {
+            res.data.forEach(element => console.log(element.id));
             console.log(res.data);
+        }).catch(err => {
+            console.error(err);
         });
     }
-    render() {
-        return (
-            <div>
-                <h1>Home Page</h1>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <h1>Home Page</h1>
+            <button type="submit" onClick={getCatches}>Get Catches</button>
+        </div>
+    )
 }
 
-export default home
+export default Home
