@@ -22,7 +22,6 @@ class API {
     }
 
     static login (newLogin) {
-        console.log(newLogin);
         const options = {
             method: 'POST',
             headers: {
@@ -39,6 +38,20 @@ class API {
             } else {
                 throw new Error(data.general);
             }
+        })
+    }
+
+    static getCatches() {
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const options = {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json;charset=UTF-8'
+            }
+        }
+        return fetch(`${proxyurl}${apiUrl}/catches`, options).then(response => {
+            return response.json();
         })
     }
 }
