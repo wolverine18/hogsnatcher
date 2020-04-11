@@ -2,6 +2,8 @@ import React from 'react'
 import API from '../API'
 import { useHistory } from 'react-router-dom'
 
+import Auth from '../Auth';
+
 function Login () {
     const history = useHistory();
     const [getLogin, setLogin] = React.useState({
@@ -14,9 +16,12 @@ function Login () {
     const formSubmitted = (event) => {
         event.preventDefault();
         API.login(getLogin).then((data) => {
+            Auth.authenticate();
+            console.log(Auth.isAuthenticated)
             setError('');
-            history.push('/home');
+            history.push('/');
         }).catch((err) => {
+            Auth.signout();
             setError(err.message);
         });
         
