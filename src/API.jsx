@@ -16,7 +16,7 @@ class API {
             if (response.ok) {
                 return response.json();
             } else if (response.status === 422) {
-                console.error("Failed")
+                throw response.json();
             }
         })
     }

@@ -17,7 +17,7 @@ function Home() {
     API.getCatches().then((data) => {
       setLoading(false);
       setCatches(data);
-    });
+    })
   });
 
   return (
