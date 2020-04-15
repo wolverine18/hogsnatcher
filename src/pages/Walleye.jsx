@@ -1,8 +1,10 @@
 import React from "react";
 import API from "../API";
+import Toast from "../components/Toast"
 
 function Walleye() {
   const [getWalleye, setWalleye] = React.useState([]);
+  const [getResponse, setResponse] = React.useState('');
 
   const updateWalleye = (field, value) => {
     const newWalleye = { ...getWalleye };
@@ -15,13 +17,13 @@ function Walleye() {
     API.postNewWalleye(getWalleye)
       .then((res) => {
         console.log(res.message);
-        // setResponse(res.message);
-        // window.$(".toast").toast();
-        // window.$(".toast").toast("show");
+        setResponse(res.message);
+        window.$(".toast").toast();
+        window.$(".toast").toast("show");
       })
       .catch((err) => {
         console.log(err);
-        // setResponse(err);
+        setResponse(err);
       });
   };
 
@@ -137,6 +139,9 @@ function Walleye() {
             Cancel
           </button>
         </div>
+
+        <Toast title="Walleye Catch Entered" body={getResponse}></Toast>
+
       </form>
     </div>
   );

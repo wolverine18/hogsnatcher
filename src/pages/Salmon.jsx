@@ -1,8 +1,10 @@
 import React from "react";
 import API from "../API";
+import Toast from "../components/Toast"
 
 function Salmon() {
   const [getSalmon, setSalmon] = React.useState([]);
+  const [getResponse, setResponse] = React.useState('');
 
   const updateSalmon = (field, value) => {
     const newSalmon = { ...getSalmon };
@@ -15,13 +17,13 @@ function Salmon() {
     API.postNewSalmon(getSalmon)
       .then((res) => {
         console.log(res.message);
-        // setResponse(res.message);
-        // window.$(".toast").toast();
-        // window.$(".toast").toast("show");
+        setResponse(res.message);
+        window.$(".toast").toast();
+        window.$(".toast").toast("show");
       })
       .catch((err) => {
         console.log(err);
-        // setResponse(err);
+        setResponse(err);
       });
   };
 
@@ -183,6 +185,9 @@ function Salmon() {
             Cancel
           </button>
         </div>
+
+        <Toast title="Salmon Catch Entered" body={getResponse}></Toast>
+
       </form>
     </div>
   );
