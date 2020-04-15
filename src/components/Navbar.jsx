@@ -35,6 +35,11 @@ function Navbar() {
               Salmon
             </a>
           </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/walleye">
+              Walleye
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
