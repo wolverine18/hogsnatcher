@@ -30,6 +30,11 @@ function Navbar() {
               Bass
             </a>
           </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/salmon">
+              Salmon
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

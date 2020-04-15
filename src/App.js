@@ -8,6 +8,7 @@ import login from './pages/login'
 import signup from './pages/signup'
 import Bass from './pages/bass'
 import NotFound from './pages/NotFound'
+import Salmon from './pages/Salmon'
 
 //components
 import Navbar  from './components/Navbar'
@@ -23,7 +24,8 @@ function App() {
             <Route exact path="/" component={login}></Route>
             <Route exact path="/signup" component={signup}></Route>
             <Route exact path="/bass" component={Bass}></Route>
-            <Route><NotFound></NotFound></Route>
+            <Route exaxt path="/salmon" component={Salmon}></Route>
+            <Route><NotFound></NotFound></Route>    
           </Switch>
         </div>
       </Router>

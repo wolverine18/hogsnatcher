@@ -20,6 +20,26 @@ class API {
             }
         })
     }
+    
+    static postNewSalmon (newCatch) {
+        console.log(newCatch);
+        const options = {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json;charset=UTF-8',
+                Authorization: " Bearer " + localStorage.getItem('token')
+            },
+            body: JSON.stringify(newCatch)
+        }
+        return fetch(`${apiUrl}/salmon`, options).then(async response => {
+            if (response.ok) {
+                return response.json();
+            } else if (response.status === 422) {
+                throw response.json();
+            }
+        })
+    }
 
     static login (newLogin) {
         const options = {
