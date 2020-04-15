@@ -90,8 +90,16 @@ class API {
                 'Content-Type': 'application/json;charset=UTF-8'
             }
         }
-        return fetch(`${proxyurl}${apiUrl}/bass`, options).then(response => {
-            return response.json();
+        return fetch(`${apiUrl}/bass`, options).then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                console.error('Response not ok');
+            }
+           
+        })
+        .catch((err) => {
+            console.error('Error getting bass: ' + err);
         })
     }
 
@@ -104,7 +112,7 @@ class API {
                 'Content-Type': 'application/json;charset=UTF-8'
             }
         }
-        return fetch(`${proxyurl}${apiUrl}/salmon`, options).then(response => {
+        return fetch(`${apiUrl}/salmon`, options).then(response => {
             return response.json();
         })
     }
@@ -118,7 +126,7 @@ class API {
                 'Content-Type': 'application/json;charset=UTF-8'
             }
         }
-        return fetch(`${proxyurl}${apiUrl}/walleye`, options).then(response => {
+        return fetch(`${apiUrl}/walleye`, options).then(response => {
             return response.json();
         })
     }

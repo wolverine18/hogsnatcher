@@ -21,10 +21,16 @@ function Home() {
     // }).catch(err => {
     //     console.error(err);
     // });
-    API.getBass().then((data) => {
-      setLoading(false);
+    if (getBass.length === 0){
+      API.getBass().then((data) => {
       setBass(data);
+      setLoading(false);
+    })
+    .catch((err) => {
+
     });
+    }
+    
   });
 
   const bassClicked = () => {
