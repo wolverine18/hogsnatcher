@@ -1,10 +1,10 @@
 import React from "react";
 //import axios from "axios";
-import CatchesGrid from "../components/CatchesGrid";
+import BassTable from "../components/BassTable";
 import API from "../API";
 
 function Home() {
-  const [getCatches, setCatches] = React.useState([]);
+  const [getBass, setBass] = React.useState([]);
   const [getLoading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -16,14 +16,14 @@ function Home() {
     // });
     API.getBass().then((data) => {
       setLoading(false);
-      setCatches(data);
+      setBass(data);
     })
   });
 
   return (
     <div>
       <h1>Home Page</h1>
-      <CatchesGrid catches={getCatches}></CatchesGrid>
+      <BassTable bass={getBass}></BassTable>
       <div className="text-center">
         {getLoading && (
           <div className="spinner-border text-primary" role="status">

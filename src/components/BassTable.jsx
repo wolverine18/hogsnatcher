@@ -1,27 +1,27 @@
 import React from "react";
 
-function CatchItem({ catche }) {
+function BassItem({ bass }) {
   return (
-    <tr data-id={catche.id}>
-      <td className="col-md-3">{catche.airTemp}</td>
-      <td className="col-md-3">{catche.comments}</td>
-      <td className="col-md-3">{catche.date}</td>
-      <td className="col-md-3">{catche.depth}</td>
-      <td className="col-md-3">{catche.lure}</td>
-      <td className="col-md-3">{catche.quantity}</td>
-      <td className="col-md-3">{catche.size}</td>
-      <td className="col-md-3">{catche.userID}</td>
-      <td className="col-md-3">{catche.waterClarity}</td>
-      <td className="col-md-3">{catche.waterTemp}</td>
-      <td className="col-md-3">{catche.waypoint}</td>
-      <td className="col-md-3">{catche.windSpeed}</td>
+    <tr data-id={bass.id}>
+      <td className="col-md-3">{bass.airTemp}</td>
+      <td className="col-md-3">{bass.comments}</td>
+      <td className="col-md-3">{bass.date}</td>
+      <td className="col-md-3">{bass.depth}</td>
+      <td className="col-md-3">{bass.lure}</td>
+      <td className="col-md-3">{bass.quantity}</td>
+      <td className="col-md-3">{bass.size}</td>
+      <td className="col-md-3">{bass.userID}</td>
+      <td className="col-md-3">{bass.waterClarity}</td>
+      <td className="col-md-3">{bass.waterTemp}</td>
+      <td className="col-md-3">{bass.waypoint}</td>
+      <td className="col-md-3">{bass.windSpeed}</td>
     </tr>
   );
 }
 
-function CatchesGrid({ catches }) {
-  const catchItems = catches.map((catche, index) => (
-    <CatchItem key={catche.id} catche={catche} />
+function BassTable({ bass }) {
+  const bassItems = bass.map((b, index) => (
+    <BassItem key={b.id} bass={b} />
   ));
 
   return (
@@ -67,10 +67,10 @@ function CatchesGrid({ catches }) {
             </th>
           </tr>
         </thead>
-        <tbody>{catchItems}</tbody>
+        <tbody>{bassItems}</tbody>
       </table>
     </div>
   );
 }
 
-export default CatchesGrid;
+export default BassTable;
