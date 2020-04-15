@@ -26,7 +26,7 @@ function CatchesGrid({ catches }) {
 
   return (
     <div>
-      <table className="table table-hover w-auto">
+      <table className="table table-hover table-responsive w-auto">
         <thead>
           <tr className="bg-primary">
             <th className="col-md-3" scope="col">

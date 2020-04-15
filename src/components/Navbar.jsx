@@ -26,8 +26,8 @@ function Navbar() {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/catch">
-              Catch
+            <a className="nav-link" href="/bass">
+              Bass
             </a>
           </li>
         </ul>

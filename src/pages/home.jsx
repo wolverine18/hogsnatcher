@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+//import axios from "axios";
 import CatchesGrid from "./CatchesGrid";
 import API from "../API";
 
@@ -14,7 +14,7 @@ function Home() {
     // }).catch(err => {
     //     console.error(err);
     // });
-    API.getCatches().then((data) => {
+    API.getBass().then((data) => {
       setLoading(false);
       setCatches(data);
     })

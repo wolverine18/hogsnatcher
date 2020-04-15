@@ -1,19 +1,19 @@
 import React from "react";
 import API from "../API";
 
-function Catch() {
-  const [getCatch, setCatch] = React.useState([]);
+function Bass() {
+  const [getBass, setBass] = React.useState([]);
   const [getReponse, setResponse] = React.useState("");
 
-  const updateCatch = (field, value) => {
-    const newCatch = { ...getCatch };
-    newCatch[field] = value;
-    setCatch(newCatch);
+  const updateBass = (field, value) => {
+    const newBass = { ...getBass };
+    newBass[field] = value;
+    setBass(newBass);
   };
 
   const formSubmitted = (event) => {
     event.preventDefault();
-    API.postNewCatch(getCatch)
+    API.postNewBass(getBass)
       .then((res) => {
         console.log(res.message);
         setResponse(res.message);
@@ -30,16 +30,16 @@ function Catch() {
 
   return (
     <div className="container-fluid">
-      <h1>Enter A Catch</h1>
-      <form id="catchForm" onSubmit={formSubmitted}>
+      <h1>Enter A Bass Catch</h1>
+      <form id="bassForm" onSubmit={formSubmitted}>
         <div className="form-group">
           <label htmlFor="date">Date:</label>
           <input
             type="date"
             id="date"
             className="form-control datepicker"
-            value={getCatch.date || ""}
-            onChange={(event) => updateCatch("date", event.target.value)}
+            value={getBass.date || ""}
+            onChange={(event) => updateBass("date", event.target.value)}
           ></input>
         </div>
         <div className="form-group">
@@ -49,8 +49,8 @@ function Catch() {
             id="waterTemp"
             placeholder="Water Temperature"
             className="form-control"
-            value={getCatch.waterTemp || ""}
-            onChange={(event) => updateCatch("waterTemp", event.target.value)}
+            value={getBass.waterTemp || ""}
+            onChange={(event) => updateBass("waterTemp", event.target.value)}
           ></input>
         </div>
         <div className="form-group">
@@ -59,9 +59,9 @@ function Catch() {
             id="htmlFor"
             className="form-control"
             defaultValue="DEFAULT"
-            value={getCatch.waterClarity}
+            value={getBass.waterClarity}
             onChange={(event) =>
-              updateCatch("waterClarity", event.target.value)
+              updateBass("waterClarity", event.target.value)
             }
           >
             <option hidden disabled value="DEFAULT">
@@ -78,8 +78,8 @@ function Catch() {
             id="Wind Speed"
             className="form-control"
             defaultValue="DEFAULT"
-            value={getCatch.windSpeed}
-            onChange={(event) => updateCatch("windSpeed", event.target.value)}
+            value={getBass.windSpeed}
+            onChange={(event) => updateBass("windSpeed", event.target.value)}
           >
             <option hidden disabled value="DEFAULT">
               {" "}
@@ -98,8 +98,8 @@ function Catch() {
             id="lure"
             className="form-control"
             defaultValue="DEFAULT"
-            value={getCatch.lure}
-            onChange={(event) => updateCatch("lure", event.target.value)}
+            value={getBass.lure}
+            onChange={(event) => updateBass("lure", event.target.value)}
           >
             <option hidden disabled value="DEFAULT">
               {" "}
@@ -118,8 +118,8 @@ function Catch() {
             id="waypoint"
             placeholder="Waypoint"
             className="form-control"
-            value={getCatch.waypoint || ""}
-            onChange={(event) => updateCatch("waypoint", event.target.value)}
+            value={getBass.waypoint || ""}
+            onChange={(event) => updateBass("waypoint", event.target.value)}
           ></input>
         </div>
         <div className="form-group">
@@ -129,8 +129,8 @@ function Catch() {
             placeholder="Comments"
             rows="5"
             className="form-control"
-            value={getCatch.comments || ""}
-            onChange={(event) => updateCatch("comments", event.target.value)}
+            value={getBass.comments || ""}
+            onChange={(event) => updateBass("comments", event.target.value)}
           ></textarea>
         </div>
         <div className="form-group">
@@ -140,8 +140,8 @@ function Catch() {
             id="airTemp"
             placeholder="Air Temperature"
             className="form-control"
-            value={getCatch.airTemp || ""}
-            onChange={(event) => updateCatch("airTemp", event.target.value)}
+            value={getBass.airTemp || ""}
+            onChange={(event) => updateBass("airTemp", event.target.value)}
           ></input>
         </div>
         <div className="form-group">
@@ -151,8 +151,8 @@ function Catch() {
             id="quantity"
             placeholder="Number of Fish"
             className="form-control"
-            value={getCatch.quantity || ""}
-            onChange={(event) => updateCatch("quantity", event.target.value)}
+            value={getBass.quantity || ""}
+            onChange={(event) => updateBass("quantity", event.target.value)}
           ></input>
         </div>
         <div className="form-group">
@@ -161,8 +161,8 @@ function Catch() {
             id="size"
             className="form-control"
             defaultValue="DEFAULT"
-            value={getCatch.size}
-            onChange={(event) => updateCatch("size", event.target.value)}
+            value={getBass.size}
+            onChange={(event) => updateBass("size", event.target.value)}
           >
             <option hidden disabled value="DEFAULT">
               {" "}
@@ -180,8 +180,8 @@ function Catch() {
             id="depth"
             placeholder="Depth"
             className="form-control"
-            value={getCatch.depth || ""}
-            onChange={(event) => updateCatch("depth", event.target.value)}
+            value={getBass.depth || ""}
+            onChange={(event) => updateBass("depth", event.target.value)}
           ></input>
         </div>
 
@@ -207,7 +207,7 @@ function Catch() {
           data-delay="3000"
         >
           <div className="toast-header">
-            <strong className="mr-auto">Catch Entered</strong>
+            <strong className="mr-auto">Bass Entered</strong>
             <button
               type="button"
               className="ml-2 mb-1 close"
@@ -226,4 +226,4 @@ function Catch() {
   );
 }
 
-export default Catch;
+export default Bass;
