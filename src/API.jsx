@@ -94,6 +94,34 @@ class API {
             return response.json();
         })
     }
+
+    static getSalmon() {
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const options = {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json;charset=UTF-8'
+            }
+        }
+        return fetch(`${proxyurl}${apiUrl}/salmon`, options).then(response => {
+            return response.json();
+        })
+    }
+
+    static getWalleye() {
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const options = {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json;charset=UTF-8'
+            }
+        }
+        return fetch(`${proxyurl}${apiUrl}/walleye`, options).then(response => {
+            return response.json();
+        })
+    }
 }
 
 export default API;
