@@ -1,6 +1,6 @@
 import React from "react";
 //import axios from "axios";
-import CatchesGrid from "./CatchesGrid";
+import CatchesGrid from "../components/CatchesGrid";
 import API from "../API";
 
 function Home() {

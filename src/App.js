@@ -3,10 +3,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //pages
-import home from './pages/home'
-import login from './pages/login'
-import signup from './pages/signup'
-import Bass from './pages/bass'
+import home from './pages/Home'
+import login from './pages/Login'
+import Bass from './pages/Bass'
 import NotFound from './pages/NotFound'
 import Salmon from './pages/Salmon'
 import Walleye from './pages/Walleye'
@@ -23,7 +22,6 @@ function App() {
           <Switch>
             <Route exact path="/home" component={home}></Route>
             <Route exact path="/" component={login}></Route>
-            <Route exact path="/signup" component={signup}></Route>
             <Route exact path="/bass" component={Bass}></Route>
             <Route exaxt path="/salmon" component={Salmon}></Route>
             <Route exaxt path="/walleye" component={Walleye}></Route>
