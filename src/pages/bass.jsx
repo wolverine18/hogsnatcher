@@ -197,6 +197,8 @@ function Bass() {
             onChange={(event) => updateBass("depth", event.target.value)}
           ></input>
         </div>
+        <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#weatherSection" aria-expanded="false" aria-controls="weatherSection">Toggle Weather Section</button>
+        <div className="collapse" id="weatherSection">
         <div className="form-group">
           <label htmlFor="airTemp">Air Tempurature (F):</label>
           <input
@@ -285,6 +287,8 @@ function Bass() {
             onChange={(event) => updateBass("condition", event.target.value)}
           ></input>
         </div>
+        </div>
+        
 
         <div className="form-group">
           <button type="submit" className="btn btn-primary">
