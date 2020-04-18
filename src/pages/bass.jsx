@@ -91,6 +91,14 @@ function Bass() {
             <option>Jerkbait</option>
             <option>Crankbait</option>
             <option>Dropshot</option>
+            <option>Craw</option>
+            <option>Ned Rig</option>
+            <option>Umbrella Rig</option>
+            <option>Butt Plug</option>
+            <option>Frog</option>
+            <option>Spook</option>
+            <option>Tube</option>
+            <option>Chatter Bait</option>
           </select>
         </div>
         <div className="form-group">

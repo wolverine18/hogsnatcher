@@ -60,13 +60,22 @@ function Salmon() {
         </div>
         <div className="form-group">
           <label htmlFor="paddleSize">Paddle Size</label>
-          <input
-            type="number"
+          <select
             id="paddleSize"
             className="form-control"
-            value={getSalmon.paddleSize || ""}
+            defaultValue="DEFAULT"
+            value={getSalmon.paddleSize}
             onChange={(event) => updateSalmon("paddleSize", event.target.value)}
-          ></input>
+          >
+            <option hidden disabled value="DEFAULT">
+              {" "}
+              -- select an option --{" "}
+            </option>
+            <option>6</option>
+            <option>8</option>
+            <option>10</option>
+            <option>12</option>
+          </select>
         </div>
         <div className="form-group">
           <label htmlFor="paddleName">Paddle Name</label>
@@ -81,10 +90,12 @@ function Salmon() {
               {" "}
               -- select an option --{" "}
             </option>
-            <option>Jig</option>
-            <option>Jerkbait</option>
-            <option>Crankbait</option>
-            <option>Dropshot</option>
+            <option>Blue Chrome Frog</option>
+            <option>Black Pearl</option>
+            <option>Chrome Frog</option>
+            <option>Black Dot Crush</option>
+            <option>Green Double Crush</option>
+            <option>Dreamcatcher</option>
           </select>
         </div>
         <div className="form-group">
