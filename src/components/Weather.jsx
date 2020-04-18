@@ -121,7 +121,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
             id="precip"
             placeholder="Precipitation"
             className="form-control"
-            value={getCatch.precip || 0}
+            value={getCatch.precip || ""}
             onChange={(event) => updateCatch("precip", event.target.value)}
           ></input>
         </div>
