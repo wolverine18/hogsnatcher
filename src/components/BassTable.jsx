@@ -3,7 +3,6 @@ import React from "react";
 function BassItem({ bass }) {
   return (
     <tr data-id={bass.id}>
-      <td className="col-md-3">{bass.airTemp}</td>
       <td className="col-md-3">{bass.comments}</td>
       <td className="col-md-3">{bass.date}</td>
       <td className="col-md-3">{bass.depth}</td>
@@ -14,7 +13,14 @@ function BassItem({ bass }) {
       <td className="col-md-3">{bass.waterClarity}</td>
       <td className="col-md-3">{bass.waterTemp}</td>
       <td className="col-md-3">{bass.waypoint}</td>
+      <td className="col-md-3">{bass.airTemp}</td>
       <td className="col-md-3">{bass.windSpeed}</td>
+      <td className="col-md-3">{bass.windDir}</td>
+      <td className="col-md-3">{bass.pressure}</td>
+      <td className="col-md-3">{bass.humidity}</td>
+      <td className="col-md-3">{bass.precip}</td>
+      <td className="col-md-3">{bass.cloudCover}</td>
+      <td className="col-md-3">{bass.conditions}</td>
     </tr>
   );
 }
@@ -29,9 +35,6 @@ function BassTable({ bass }) {
       <table className="table table-hover table-responsive w-auto">
         <thead>
           <tr className="bg-primary">
-            <th className="col-md-3" scope="col">
-              Air Temperature
-            </th>
             <th className="col-md-3" scope="col">
               Comments
             </th>
@@ -63,7 +66,28 @@ function BassTable({ bass }) {
               Waypoint
             </th>
             <th className="col-md-3" scope="col">
+              Air Temperature
+            </th>
+            <th className="col-md-3" scope="col">
               Wind Speed
+            </th>
+            <th className="col-md-3" scope="col">
+              Wind Direction
+            </th>
+            <th className="col-md-3" scope="col">
+              Pressure
+            </th>
+            <th className="col-md-3" scope="col">
+              Humidity
+            </th>
+            <th className="col-md-3" scope="col">
+              Precipitation
+            </th>
+            <th className="col-md-3" scope="col">
+              Cloud Cover
+            </th>
+            <th className="col-md-3" scope="col">
+              Conditions
             </th>
           </tr>
         </thead>

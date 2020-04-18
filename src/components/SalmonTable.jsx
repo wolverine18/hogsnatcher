@@ -3,7 +3,6 @@ import React from "react";
 function SalmonItem({ salmon }) {
   return (
     <tr data-id={salmon.id}>
-      <td className="col-md-3">{salmon.airTemp}</td>
       <td className="col-md-3">{salmon.comments}</td>
       <td className="col-md-3">{salmon.date}</td>
       <td className="col-md-3">{salmon.depth}</td>
@@ -15,6 +14,14 @@ function SalmonItem({ salmon }) {
       <td className="col-md-3">{salmon.surfaceTemp}</td>
       <td className="col-md-3">{salmon.userID}</td>
       <td className="col-md-3">{salmon.visibility}</td>
+      <td className="col-md-3">{salmon.airTemp}</td>
+      <td className="col-md-3">{salmon.windSpeed}</td>
+      <td className="col-md-3">{salmon.windDir}</td>
+      <td className="col-md-3">{salmon.pressure}</td>
+      <td className="col-md-3">{salmon.humidity}</td>
+      <td className="col-md-3">{salmon.precip}</td>
+      <td className="col-md-3">{salmon.cloudCover}</td>
+      <td className="col-md-3">{salmon.conditions}</td>
     </tr>
   );
 }
@@ -29,9 +36,6 @@ function SalmonTable({ salmon }) {
       <table className="table table-hover table-responsive w-auto">
         <thead>
           <tr className="bg-primary">
-            <th className="col-md-3" scope="col">
-              Air Temperature
-            </th>
             <th className="col-md-3" scope="col">
               Comments
             </th>
@@ -64,6 +68,30 @@ function SalmonTable({ salmon }) {
             </th>
             <th className="col-md-3" scope="col">
               Visibility
+            </th>
+            <th className="col-md-3" scope="col">
+              Air Temperature
+            </th>
+            <th className="col-md-3" scope="col">
+              Wind Speed
+            </th>
+            <th className="col-md-3" scope="col">
+              Wind Direction
+            </th>
+            <th className="col-md-3" scope="col">
+              Pressure
+            </th>
+            <th className="col-md-3" scope="col">
+              Humidity
+            </th>
+            <th className="col-md-3" scope="col">
+              Precipitation
+            </th>
+            <th className="col-md-3" scope="col">
+              Cloud Cover
+            </th>
+            <th className="col-md-3" scope="col">
+              Conditions
             </th>
           </tr>
         </thead>

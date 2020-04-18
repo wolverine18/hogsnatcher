@@ -24,7 +24,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
         newCatch["humidity"] = current.humidity;
         newCatch["precip"] = current.precip_in;
         newCatch["cloudCover"] = current.cloud;
-        newCatch["condition"] = current.condition.text;
+        newCatch["conditions"] = current.condition.text;
         setCatch(newCatch);
       }
     };
@@ -137,14 +137,14 @@ function Weather({ updateCatch, getCatch, setCatch }) {
           ></input>
         </div>
         <div className="form-group">
-          <label htmlFor="condition">Conditions:</label>
+          <label htmlFor="conditions">Conditions:</label>
           <input
             type="text"
-            id="condition"
+            id="conditions"
             placeholder="Conditions"
             className="form-control"
             value={getCatch.condition || ""}
-            onChange={(event) => updateCatch("condition", event.target.value)}
+            onChange={(event) => updateCatch("conditions", event.target.value)}
           ></input>
         </div>
       </div>
