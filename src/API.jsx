@@ -34,10 +34,11 @@ class API {
             body: JSON.stringify(newCatch)
         }
         return fetch(`${apiUrl}/salmon`, options).then(async response => {
+            const data = await response.json();
             if (response.ok) {
-                return response.json();
-            } else if (response.status === 422) {
-                throw response.json();
+                return data;
+            } else {
+                throw data;
             }
         })
     }
@@ -54,10 +55,11 @@ class API {
             body: JSON.stringify(newCatch)
         }
         return fetch(`${apiUrl}/walleye`, options).then(async response => {
+            const data = await response.json();
             if (response.ok) {
-                return response.json();
-            } else if (response.status === 422) {
-                throw response.json();
+                return data;
+            } else {
+                throw data;
             }
         })
     }
@@ -83,7 +85,6 @@ class API {
     }
 
     static getBass() {
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const options = {
             method: 'GET',
             headers: {
@@ -105,7 +106,6 @@ class API {
     }
 
     static getSalmon() {
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const options = {
             method: 'GET',
             headers: {
@@ -119,7 +119,6 @@ class API {
     }
 
     static getWalleye() {
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const options = {
             method: 'GET',
             headers: {

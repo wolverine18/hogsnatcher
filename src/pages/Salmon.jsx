@@ -1,10 +1,12 @@
 import React from "react";
 import API from "../API";
 import Toast from "../components/Toast"
+import Weather from "../components/Weather"
 
 function Salmon() {
   const [getSalmon, setSalmon] = React.useState([]);
   const [getResponse, setResponse] = React.useState('');
+  const [getTitle, setTitle] = React.useState('');
 
   const updateSalmon = (field, value) => {
     const newSalmon = { ...getSalmon };
@@ -14,16 +16,17 @@ function Salmon() {
 
   const formSubmitted = (event) => {
     event.preventDefault();
+        window.$(".toast").toast();
     API.postNewSalmon(getSalmon)
       .then((res) => {
-        console.log(res.message);
         setResponse(res.message);
-        window.$(".toast").toast();
+        setTitle("Salmon Catch Added Successfully");
         window.$(".toast").toast("show");
       })
       .catch((err) => {
-        console.log(err);
-        setResponse(err);
+        setResponse(err.message);
+        setTitle(err.code);
+        window.$(".toast").toast("show");
       });
   };
 
@@ -53,16 +56,6 @@ function Salmon() {
             onChange={(event) =>
               updateSalmon("surfaceTemp", event.target.value)
             }
-          ></input>
-        </div>
-        <div className="form-group">
-          <label htmlFor="airTemp">Air Tempurature</label>
-          <input
-            type="number"
-            id="airTemp"
-            className="form-control"
-            value={getSalmon.airTemp || ""}
-            onChange={(event) => updateSalmon("airTemp", event.target.value)}
           ></input>
         </div>
         <div className="form-group">
@@ -173,6 +166,8 @@ function Salmon() {
           ></input>
         </div>
 
+        <Weather updateCatch={updateSalmon} getCatch={getSalmon} setCatch={setSalmon} ></Weather>
+
         <div className="form-group">
           <button type="submit" className="btn btn-primary">
             Submit
@@ -186,7 +181,7 @@ function Salmon() {
           </button>
         </div>
 
-        <Toast title="Salmon Catch Entered" body={getResponse}></Toast>
+        <Toast title={getTitle} body={getResponse}></Toast>
 
       </form>
     </div>

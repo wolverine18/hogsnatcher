@@ -1,10 +1,12 @@
 import React from "react";
 import API from "../API";
-import Toast from "../components/Toast"
+import Toast from "../components/Toast";
+import Weather from "../components/Weather";
 
 function Walleye() {
   const [getWalleye, setWalleye] = React.useState([]);
   const [getResponse, setResponse] = React.useState('');
+  const [getTitle, setTitle] = React.useState('');
 
   const updateWalleye = (field, value) => {
     const newWalleye = { ...getWalleye };
@@ -14,16 +16,17 @@ function Walleye() {
 
   const formSubmitted = (event) => {
     event.preventDefault();
+    window.$(".toast").toast();
     API.postNewWalleye(getWalleye)
       .then((res) => {
-        console.log(res.message);
         setResponse(res.message);
-        window.$(".toast").toast();
+        setTitle('Walleye Catch Added Successfully');
         window.$(".toast").toast("show");
       })
       .catch((err) => {
-        console.log(err);
-        setResponse(err);
+        setResponse(err.message);
+        setTitle(err.code);
+        window.$(".toast").toast("show");
       });
   };
 
@@ -53,16 +56,6 @@ function Walleye() {
             onChange={(event) =>
               updateWalleye("surfaceTemp", event.target.value)
             }
-          ></input>
-        </div>
-        <div className="form-group">
-          <label htmlFor="airTemp">Air Tempurature</label>
-          <input
-            type="number"
-            id="airTemp"
-            className="form-control"
-            value={getWalleye.airTemp || ""}
-            onChange={(event) => updateWalleye("airTemp", event.target.value)}
           ></input>
         </div>
         <div className="form-group">
@@ -127,6 +120,8 @@ function Walleye() {
           ></input>
         </div>
 
+        <Weather updateCatch={updateWalleye} getCatch={getWalleye} setCatch={setWalleye} ></Weather>
+
         <div className="form-group">
           <button type="submit" className="btn btn-primary">
             Submit
@@ -140,7 +135,7 @@ function Walleye() {
           </button>
         </div>
 
-        <Toast title="Walleye Catch Entered" body={getResponse}></Toast>
+        <Toast title={getTitle} body={getResponse}></Toast>
 
       </form>
     </div>
