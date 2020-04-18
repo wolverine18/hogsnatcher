@@ -176,6 +176,17 @@ function Salmon() {
             onChange={(event) => updateSalmon("depth", event.target.value)}
           ></input>
         </div>
+        <div className="form-group">
+          <label htmlFor="depthFish">Depth of Fish:</label>
+          <input
+            type="number"
+            id="depthFish"
+            placeholder="Depth of Fish"
+            className="form-control"
+            value={getSalmon.depthFish || ""}
+            onChange={(event) => updateSalmon("depthFish", event.target.value)}
+          ></input>
+        </div>
 
         <Weather updateCatch={updateSalmon} getCatch={getSalmon} setCatch={setSalmon} ></Weather>
 

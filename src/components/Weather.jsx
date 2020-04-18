@@ -46,6 +46,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
       Location.getLocation(gotLocation, errorHandler);
     }
   });
+  
   return (
     <div>
       <button

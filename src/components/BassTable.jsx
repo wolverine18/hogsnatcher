@@ -13,6 +13,7 @@ function BassItem({ bass }) {
       <td className="col-md-3">{bass.waterClarity}</td>
       <td className="col-md-3">{bass.waterTemp}</td>
       <td className="col-md-3">{bass.waypoint}</td>
+      <td className="col-md-3">{bass.lake}</td>
       <td className="col-md-3">{bass.airTemp}</td>
       <td className="col-md-3">{bass.windSpeed}</td>
       <td className="col-md-3">{bass.windDir}</td>
@@ -64,6 +65,9 @@ function BassTable({ bass }) {
             </th>
             <th className="col-md-3" scope="col">
               Waypoint
+            </th>
+            <th className="col-md-3" scope="col">
+              Lake
             </th>
             <th className="col-md-3" scope="col">
               Air Temperature

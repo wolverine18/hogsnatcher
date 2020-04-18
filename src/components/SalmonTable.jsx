@@ -6,6 +6,7 @@ function SalmonItem({ salmon }) {
       <td className="col-md-3">{salmon.comments}</td>
       <td className="col-md-3">{salmon.date}</td>
       <td className="col-md-3">{salmon.depth}</td>
+      <td className="col-md-3">{salmon.depthFish}</td>
       <td className="col-md-3">{salmon.lure}</td>
       <td className="col-md-3">{salmon.paddleName}</td>
       <td className="col-md-3">{salmon.paddleSize}</td>
@@ -44,6 +45,9 @@ function SalmonTable({ salmon }) {
             </th>
             <th className="col-md-3" scope="col">
               Depth
+            </th>
+            <th className="col-md-3" scope="col">
+              Depth of Fish
             </th>
             <th className="col-md-3" scope="col">
               Lure

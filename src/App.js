@@ -20,8 +20,8 @@ function App() {
         <Navbar></Navbar>
         <div className="container">
           <Switch>
-            <Route exact path="/home" component={home}></Route>
-            <Route exact path="/" component={login}></Route>
+            <Route exact path="/" component={home}></Route>
+            <Route exact path="/login" component={login}></Route>
             <Route exact path="/bass" component={Bass}></Route>
             <Route exaxt path="/salmon" component={Salmon}></Route>
             <Route exaxt path="/walleye" component={Walleye}></Route>

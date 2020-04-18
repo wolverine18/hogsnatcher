@@ -163,6 +163,17 @@ function Bass() {
             onChange={(event) => updateBass("depth", event.target.value)}
           ></input>
         </div>
+        <div className="form-group">
+          <label htmlFor="lake">Lake:</label>
+          <input
+            type="text"
+            id="lake"
+            placeholder="Lake"
+            className="form-control"
+            value={getBass.lake || ""}
+            onChange={(event) => updateBass("lake", event.target.value)}
+          ></input>
+        </div>
 
         <Weather updateCatch={updateBass} getCatch={getBass} setCatch={setBass} ></Weather>
 
