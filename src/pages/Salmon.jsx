@@ -30,8 +30,6 @@ function Salmon() {
       });
   };
 
-  const cancelClicked = (event) => {};
-
   return (
     <div className="container-fluid">
       <h1>Enter A Salmon Catch</h1>
@@ -193,13 +191,6 @@ function Salmon() {
         <div className="form-group">
           <button type="submit" className="btn btn-primary">
             Submit
-          </button>
-          <button
-            type="submit"
-            className="btn btn-danger"
-            onClick={cancelClicked}
-          >
-            Cancel
           </button>
         </div>
 

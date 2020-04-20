@@ -1,5 +1,4 @@
 import React from "react";
-//import axios from "axios";
 import API from "../API";
 import BassTable from "../components/BassTable";
 import SalmonTable from "../components/SalmonTable";
@@ -15,19 +14,13 @@ function Home() {
   const [getCatchType, setCatchType] = React.useState('bass');
 
   React.useEffect(() => {
-    // axios.get('https://us-central1-hogsnatcher-3e6c3.cloudfunctions.net/api/catches')
-    // .then((res) => {
-    //     setCatches(res.data);
-    // }).catch(err => {
-    //     console.error(err);
-    // });
     if (getBass.length === 0){
       API.getBass().then((data) => {
       setBass(data);
       setLoading(false);
     })
     .catch((err) => {
-
+      console.log(err)
     });
     }
     
@@ -72,6 +65,7 @@ function Home() {
         </button>
         <button
           type="submit"
+          id="salmon"
           className="btn btn-primary"
           onClick={salmonClicked}
         >

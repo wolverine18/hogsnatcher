@@ -11,6 +11,7 @@ function About () {
             <p>Weather information taken from <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI</a></p>
             <p>Tested using <a href="https://testing-library.com/docs/react-testing-library/intro" target="_blank">React Testing Library</a></p>
             <p>Styled using <a href="https://getbootstrap.com/" target="_blank">Bootstrap CDN</a></p>
+            <p>Navigation via <a href="https://www.npmjs.com/package/react-router-dom" target="_blank">React Router Dom</a></p>
         </div>
     )
 }

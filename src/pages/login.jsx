@@ -15,7 +15,7 @@ function Login () {
         event.preventDefault();
         API.login(getLogin).then((data) => {
             setError('');
-            history.push('/home');
+            history.push('/');
         }).catch((err) => {
             setError(err.message);
         });
@@ -39,12 +39,6 @@ function Login () {
                 <div className="form-group">
                     <label>Password</label>
                     <input type="password" className="form-control" placeholder="Enter password" required={true} name="password" value={getLogin.password} onChange={handleChange}></input>
-                </div>
-                <div className="form-group">
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="remeberMe" />
-                        <label className="custom-control-label" htmlFor="rememberMe">Remember me</label>
-                    </div>
                 </div>
                 {getError && (
                     <div className="alert alert-warning" role="alert">
