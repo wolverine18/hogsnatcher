@@ -11,13 +11,15 @@ function Home() {
   const [getLoading, setLoading] = React.useState(true);
   const [getFirstSalmonLoad, setFirstSalmonLoad] = React.useState(true);
   const [getFirstWalleyeLoad, setFirstWalleyeLoad] = React.useState(true);
+  const [getFirstBassLoad, setFirstBassLoad] = React.useState(true);
   const [getCatchType, setCatchType] = React.useState('bass');
 
   React.useEffect(() => {
-    if (getBass.length === 0){
+    if (getFirstBassLoad){
       API.getBass().then((data) => {
-      setBass(data);
-      setLoading(false);
+        setFirstBassLoad(false);
+        setBass(data);
+        setLoading(false);
     })
     .catch((err) => {
       console.log(err)
