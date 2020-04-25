@@ -3,6 +3,8 @@ const apiUrl = 'https://us-central1-hogsnatcher-3e6c3.cloudfunctions.net/api';
 class API {
     static postNewBass (newCatch) {
         console.log(newCatch);
+            console.log(new Date(newCatch.date));
+            console.log(new Date(newCatch.date).toLocaleDateString('en-US'));
         const options = {
             method: 'POST',
             headers: {

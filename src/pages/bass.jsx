@@ -8,9 +8,22 @@ function Bass() {
   const [getResponse, setResponse] = React.useState("");
   const [getTitle, setTitle] = React.useState("");
 
-  const updateBass = (field, value) => {
+  const updateBass = (field, target) => {
     const newBass = { ...getBass };
-    newBass[field] = value;
+    if(field === "lure") {
+      let valueString = '';
+      let values = Array.from(target.selectedOptions, option => option.value);
+      console.log(values);
+      values.forEach(value => {
+        console.log(value);
+        valueString += value + ", ";
+      })
+      console.log(valueString);
+      valueString = valueString.substring(0, values.length - 2);
+      newBass[field] = values;
+    } else {
+      newBass[field] = target.value;
+    }
     setBass(newBass);
   };
 
@@ -30,6 +43,11 @@ function Bass() {
       });
   };
 
+  window.$(function () {
+    
+    window.$('lure').selectpicker();
+  });
+
   return (
     <div className="container-fluid">
       <h1>Enter A Bass Catch</h1>
@@ -41,7 +59,47 @@ function Bass() {
             id="date"
             className="form-control datepicker"
             value={getBass.date || ""}
-            onChange={(event) => updateBass("date", event.target.value)}
+            onChange={(event) => updateBass("date", event.target)}
+          ></input>
+        </div>
+        <div className="form-group">
+          <label htmlFor="lake">Lake:</label>
+          <input
+            type="text"
+            id="lake"
+            placeholder="Lake"
+            className="form-control"
+            value={getBass.lake || ""}
+            onChange={(event) => updateBass("lake", event.target)}
+          ></input>
+        </div>
+        <div className="form-group">
+          <label htmlFor="type">Type:</label>
+          <select
+            id="type"
+            className="form-control"
+            defaultValue="DEFAULT"
+            value={getBass.waterClarity}
+            onChange={(event) => updateBass("type", event.target)}
+          >
+            <option hidden disabled value="DEFAULT">
+              {" "}
+              -- select an option --{" "}
+            </option>
+            <option>Largemouth</option>
+            <option>Smallmouth</option>
+            <option>Largemouth and Smallmouth</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="quantity">Number of Fish:</label>
+          <input
+            type="number"
+            id="quantity"
+            placeholder="Number of Fish"
+            className="form-control"
+            value={getBass.quantity || ""}
+            onChange={(event) => updateBass("quantity", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -52,7 +110,7 @@ function Bass() {
             placeholder="Water Temperature"
             className="form-control"
             value={getBass.waterTemp || ""}
-            onChange={(event) => updateBass("waterTemp", event.target.value)}
+            onChange={(event) => updateBass("waterTemp", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -62,41 +120,56 @@ function Bass() {
             className="form-control"
             defaultValue="DEFAULT"
             value={getBass.waterClarity}
-            onChange={(event) => updateBass("waterClarity", event.target.value)}
+            onChange={(event) => updateBass("waterClarity", event.target)}
           >
             <option hidden disabled value="DEFAULT">
               {" "}
               -- select an option --{" "}
             </option>
             <option>Clear</option>
+            <option>Stained</option>
             <option>Muddy</option>
           </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="depth">Depth:</label>
+          <input
+            type="text"
+            id="depth"
+            placeholder="Depth"
+            className="form-control"
+            value={getBass.depth || ""}
+            onChange={(event) => updateBass("depth", event.target)}
+          ></input>
         </div>
         <div className="form-group">
           <label htmlFor="lure">Lure:</label>
           <select
             id="lure"
-            className="form-control"
-            defaultValue="DEFAULT"
+            className="selectpicker form-control" multiple data-live-search="true"
             value={getBass.lure}
-            onChange={(event) => updateBass("lure", event.target.value)}
+            onChange={(event) => updateBass("lure", event.target)}
           >
-            <option hidden disabled value="DEFAULT">
-              {" "}
-              -- select an option --{" "}
-            </option>
-            <option>Jig</option>
-            <option>Jerkbait</option>
-            <option>Crankbait</option>
-            <option>Dropshot</option>
-            <option>Craw</option>
-            <option>Ned Rig</option>
-            <option>Umbrella Rig</option>
-            <option>Butt Plug</option>
-            <option>Frog</option>
-            <option>Spook</option>
-            <option>Tube</option>
-            <option>Chatter Bait</option>
+            <optgroup label="Topwater">
+              <option>Frog</option>
+              <option>Spook</option>
+            </optgroup>
+            <optgroup label="Plastics">
+              <option>Dropshot</option>
+              <option>Jig</option>
+              <option>Craw</option>
+              <option>Ned Rig</option>
+              <option>Butt Plug</option>
+              <option>Tube</option>
+            </optgroup>
+            <optgroup label="Moving">
+              <option>Jerkbait</option>
+              <option>Crankbait</option>
+              <option>Chatter Bait</option>
+            </optgroup>
+            <optgroup label="Misc">
+              <option>Umbrella Rig</option>
+            </optgroup>
           </select>
         </div>
         <div className="form-group">
@@ -107,29 +180,7 @@ function Bass() {
             placeholder="Waypoint"
             className="form-control"
             value={getBass.waypoint || ""}
-            onChange={(event) => updateBass("waypoint", event.target.value)}
-          ></input>
-        </div>
-        <div className="form-group">
-          <label htmlFor="comments">Comments:</label>
-          <textarea
-            id="comments"
-            placeholder="Comments"
-            rows="5"
-            className="form-control"
-            value={getBass.comments || ""}
-            onChange={(event) => updateBass("comments", event.target.value)}
-          ></textarea>
-        </div>
-        <div className="form-group">
-          <label htmlFor="quantity">Number of Fish:</label>
-          <input
-            type="number"
-            id="quantity"
-            placeholder="Number of Fish"
-            className="form-control"
-            value={getBass.quantity || ""}
-            onChange={(event) => updateBass("quantity", event.target.value)}
+            onChange={(event) => updateBass("waypoint", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -139,7 +190,7 @@ function Bass() {
             className="form-control"
             defaultValue="DEFAULT"
             value={getBass.size}
-            onChange={(event) => updateBass("size", event.target.value)}
+            onChange={(event) => updateBass("size", event.target)}
           >
             <option hidden disabled value="DEFAULT">
               {" "}
@@ -151,26 +202,15 @@ function Bass() {
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="depth">Depth:</label>
-          <input
-            type="number"
-            id="depth"
-            placeholder="Depth"
+          <label htmlFor="comments">Comments:</label>
+          <textarea
+            id="comments"
+            placeholder="Comments"
+            rows="5"
             className="form-control"
-            value={getBass.depth || ""}
-            onChange={(event) => updateBass("depth", event.target.value)}
-          ></input>
-        </div>
-        <div className="form-group">
-          <label htmlFor="lake">Lake:</label>
-          <input
-            type="text"
-            id="lake"
-            placeholder="Lake"
-            className="form-control"
-            value={getBass.lake || ""}
-            onChange={(event) => updateBass("lake", event.target.value)}
-          ></input>
+            value={getBass.comments || ""}
+            onChange={(event) => updateBass("comments", event.target)}
+          ></textarea>
         </div>
 
         <Weather updateCatch={updateBass} getCatch={getBass} setCatch={setBass} ></Weather>

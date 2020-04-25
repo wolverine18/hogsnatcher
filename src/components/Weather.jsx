@@ -14,7 +14,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
         let parsedWeather = JSON.parse(this.responseText);
         let current = parsedWeather.current;
         let currentDate = new Date().toJSON().slice(0, 10).replace(/-/g, "-");
-
+        console.log("Curr: " + currentDate);
         const newCatch = { ...getCatch };
         newCatch["date"] = currentDate;
         newCatch["airTemp"] = current.temp_f;
@@ -144,7 +144,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
             id="conditions"
             placeholder="Conditions"
             className="form-control"
-            value={getCatch.condition || ""}
+            value={getCatch.conditions || ""}
             onChange={(event) => updateCatch("conditions", event.target.value)}
           ></input>
         </div>
