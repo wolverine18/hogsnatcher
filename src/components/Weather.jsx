@@ -68,7 +68,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
             placeholder="Air Temperature"
             className="form-control"
             value={getCatch.airTemp || ""}
-            onChange={(event) => updateCatch("airTemp", event.target.value)}
+            onChange={(event) => updateCatch("airTemp", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -79,7 +79,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
             placeholder="Wind Speed"
             className="form-control"
             value={getCatch.windSpeed || ""}
-            onChange={(event) => updateCatch("windSpeed", event.target.value)}
+            onChange={(event) => updateCatch("windSpeed", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -90,7 +90,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
             placeholder="Wind Direction"
             className="form-control"
             value={getCatch.windDir || ""}
-            onChange={(event) => updateCatch("windDir", event.target.value)}
+            onChange={(event) => updateCatch("windDir", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -101,7 +101,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
             placeholder="Pressure"
             className="form-control"
             value={getCatch.pressure || ""}
-            onChange={(event) => updateCatch("pressure", event.target.value)}
+            onChange={(event) => updateCatch("pressure", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -112,7 +112,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
             placeholder="Humidity"
             className="form-control"
             value={getCatch.humidity || ""}
-            onChange={(event) => updateCatch("humidity", event.target.value)}
+            onChange={(event) => updateCatch("humidity", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -123,7 +123,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
             placeholder="Precipitation"
             className="form-control"
             value={getCatch.precip || ""}
-            onChange={(event) => updateCatch("precip", event.target.value)}
+            onChange={(event) => updateCatch("precip", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -134,7 +134,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
             placeholder="Cloud Cover"
             className="form-control"
             value={getCatch.cloudCover || ""}
-            onChange={(event) => updateCatch("cloudCover", event.target.value)}
+            onChange={(event) => updateCatch("cloudCover", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -145,7 +145,7 @@ function Weather({ updateCatch, getCatch, setCatch }) {
             placeholder="Conditions"
             className="form-control"
             value={getCatch.conditions || ""}
-            onChange={(event) => updateCatch("conditions", event.target.value)}
+            onChange={(event) => updateCatch("conditions", event.target)}
           ></input>
         </div>
       </div>

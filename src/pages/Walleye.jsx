@@ -8,9 +8,9 @@ function Walleye() {
   const [getResponse, setResponse] = React.useState('');
   const [getTitle, setTitle] = React.useState('');
 
-  const updateWalleye = (field, value) => {
+  const updateWalleye = (field, target) => {
     const newWalleye = { ...getWalleye };
-    newWalleye[field] = value;
+    newWalleye[field] = target.value;
     setWalleye(newWalleye);
   };
 
@@ -41,7 +41,7 @@ function Walleye() {
             id="date"
             className="form-control datepicker"
             value={getWalleye.date || ""}
-            onChange={(event) => updateWalleye("date", event.target.value)}
+            onChange={(event) => updateWalleye("date", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -52,7 +52,7 @@ function Walleye() {
             className="form-control"
             value={getWalleye.surfaceTemp || ""}
             onChange={(event) =>
-              updateWalleye("surfaceTemp", event.target.value)
+              updateWalleye("surfaceTemp", event.target)
             }
           ></input>
         </div>
@@ -63,7 +63,7 @@ function Walleye() {
             id="lure"
             className="form-control"
             value={getWalleye.lure || ""}
-            onChange={(event) => updateWalleye("lure", event.target.value)}
+            onChange={(event) => updateWalleye("lure", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -73,7 +73,7 @@ function Walleye() {
             className="form-control"
             defaultValue="DEFAULT"
             value={getWalleye.visibility}
-            onChange={(event) => updateWalleye("visibility", event.target.value)}
+            onChange={(event) => updateWalleye("visibility", event.target)}
           >
             <option hidden disabled value="DEFAULT">
               {" "}
@@ -92,7 +92,7 @@ function Walleye() {
             rows="5"
             className="form-control"
             value={getWalleye.comments || ""}
-            onChange={(event) => updateWalleye("comments", event.target.value)}
+            onChange={(event) => updateWalleye("comments", event.target)}
           ></textarea>
         </div>
         <div className="form-group">
@@ -103,7 +103,7 @@ function Walleye() {
             placeholder="Number of Fish"
             className="form-control"
             value={getWalleye.quantity || ""}
-            onChange={(event) => updateWalleye("quantity", event.target.value)}
+            onChange={(event) => updateWalleye("quantity", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -114,7 +114,7 @@ function Walleye() {
             placeholder="Depth"
             className="form-control"
             value={getWalleye.depth || ""}
-            onChange={(event) => updateWalleye("depth", event.target.value)}
+            onChange={(event) => updateWalleye("depth", event.target)}
           ></input>
         </div>
 

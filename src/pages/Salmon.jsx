@@ -8,9 +8,9 @@ function Salmon() {
   const [getResponse, setResponse] = React.useState('');
   const [getTitle, setTitle] = React.useState('');
 
-  const updateSalmon = (field, value) => {
+  const updateSalmon = (field, target) => {
     const newSalmon = { ...getSalmon };
-    newSalmon[field] = value;
+    newSalmon[field] = target.value;
     setSalmon(newSalmon);
   };
 
@@ -41,7 +41,7 @@ function Salmon() {
             id="date"
             className="form-control datepicker"
             value={getSalmon.date || ""}
-            onChange={(event) => updateSalmon("date", event.target.value)}
+            onChange={(event) => updateSalmon("date", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -52,7 +52,7 @@ function Salmon() {
             className="form-control"
             value={getSalmon.surfaceTemp || ""}
             onChange={(event) =>
-              updateSalmon("surfaceTemp", event.target.value)
+              updateSalmon("surfaceTemp", event.target)
             }
           ></input>
         </div>
@@ -63,7 +63,7 @@ function Salmon() {
             className="form-control"
             defaultValue="DEFAULT"
             value={getSalmon.paddleSize}
-            onChange={(event) => updateSalmon("paddleSize", event.target.value)}
+            onChange={(event) => updateSalmon("paddleSize", event.target)}
           >
             <option hidden disabled value="DEFAULT">
               {" "}
@@ -82,7 +82,7 @@ function Salmon() {
             className="form-control"
             defaultValue="DEFAULT"
             value={getSalmon.paddleName}
-            onChange={(event) => updateSalmon("paddleName", event.target.value)}
+            onChange={(event) => updateSalmon("paddleName", event.target)}
           >
             <option hidden disabled value="DEFAULT">
               {" "}
@@ -103,7 +103,7 @@ function Salmon() {
             id="lure"
             className="form-control"
             value={getSalmon.lure || ""}
-            onChange={(event) => updateSalmon("lure", event.target.value)}
+            onChange={(event) => updateSalmon("lure", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -113,7 +113,7 @@ function Salmon() {
             className="form-control"
             defaultValue="DEFAULT"
             value={getSalmon.rodType}
-            onChange={(event) => updateSalmon("rodType", event.target.value)}
+            onChange={(event) => updateSalmon("rodType", event.target)}
           >
             <option hidden disabled value="DEFAULT">
               {" "}
@@ -130,7 +130,7 @@ function Salmon() {
             className="form-control"
             defaultValue="DEFAULT"
             value={getSalmon.visibility}
-            onChange={(event) => updateSalmon("visibility", event.target.value)}
+            onChange={(event) => updateSalmon("visibility", event.target)}
           >
             <option hidden disabled value="DEFAULT">
               {" "}
@@ -149,7 +149,7 @@ function Salmon() {
             rows="5"
             className="form-control"
             value={getSalmon.comments || ""}
-            onChange={(event) => updateSalmon("comments", event.target.value)}
+            onChange={(event) => updateSalmon("comments", event.target)}
           ></textarea>
         </div>
         <div className="form-group">
@@ -160,7 +160,7 @@ function Salmon() {
             placeholder="Number of Fish"
             className="form-control"
             value={getSalmon.quantity || ""}
-            onChange={(event) => updateSalmon("quantity", event.target.value)}
+            onChange={(event) => updateSalmon("quantity", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -171,7 +171,7 @@ function Salmon() {
             placeholder="Depth"
             className="form-control"
             value={getSalmon.depth || ""}
-            onChange={(event) => updateSalmon("depth", event.target.value)}
+            onChange={(event) => updateSalmon("depth", event.target)}
           ></input>
         </div>
         <div className="form-group">
@@ -182,7 +182,7 @@ function Salmon() {
             placeholder="Depth of Fish"
             className="form-control"
             value={getSalmon.depthFish || ""}
-            onChange={(event) => updateSalmon("depthFish", event.target.value)}
+            onChange={(event) => updateSalmon("depthFish", event.target)}
           ></input>
         </div>
 

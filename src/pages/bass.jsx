@@ -198,6 +198,7 @@ function Bass() {
             </option>
             <option>0-2 lbs.</option>
             <option>2-3 lbs.</option>
+            <option>3-4 lbs.</option>
             <option>4+ lbs.</option>
           </select>
         </div>
